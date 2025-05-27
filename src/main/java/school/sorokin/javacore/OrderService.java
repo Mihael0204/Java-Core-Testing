@@ -8,8 +8,12 @@ public class OrderService {
     }
 
     public String processOrder(Order order) {
-        int resultId = orderRepository.saveOrder(order);
-        return resultId > 0 ? "Order processed succesfully" : "Order proccesing failed";
+        try {
+            int resultId = orderRepository.saveOrder(order);
+            return resultId > 0 ? "Order processed successfully" : "Order processing failed";
+        } catch (Exception e) {
+            return "Order processing failed";
+        }
     }
 
     public double calculateTotal(int id) {
