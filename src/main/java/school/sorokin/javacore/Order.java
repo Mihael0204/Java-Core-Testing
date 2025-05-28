@@ -6,17 +6,17 @@ public class Order {
     private int id;
     private String productName;
     private int quantity;
-    private double UnitPrice;
+    private double unitPrice;
 
     public Order(int id, String productName, int quantity, double unitPrice) {
         this.id = id;
         this.productName = productName;
         this.quantity = quantity;
-        UnitPrice = unitPrice;
+        this.unitPrice = unitPrice;
     }
 
     public double getTotalPrice() {
-        return UnitPrice * quantity;
+        return unitPrice * quantity;
     }
 
     public int getId() {
@@ -32,7 +32,7 @@ public class Order {
     }
 
     public double getUnitPrice() {
-        return UnitPrice;
+        return unitPrice;
     }
 
     @Override
@@ -40,12 +40,12 @@ public class Order {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Order order = (Order) o;
-        return id == order.id && quantity == order.quantity && Double.compare(UnitPrice, order.UnitPrice) == 0 && Objects.equals(productName, order.productName);
+        return id == order.id && quantity == order.quantity && Double.compare(unitPrice, order.unitPrice) == 0 && Objects.equals(productName, order.productName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, productName, quantity, UnitPrice);
+        return Objects.hash(id, productName, quantity, unitPrice);
     }
 
     @Override
@@ -54,7 +54,7 @@ public class Order {
                 "id=" + id +
                 ", productName='" + productName + '\'' +
                 ", quantity=" + quantity +
-                ", UnitPrice=" + UnitPrice +
+                ", UnitPrice=" + unitPrice +
                 '}';
     }
 }

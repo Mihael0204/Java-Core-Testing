@@ -1,6 +1,6 @@
 package school.sorokin.javacore;
 
-public class TestHelper {
+class TestHelper {
     public static Order getDefaultOrder() {
         return new Order(1, "Apple", 54, 12.0);
     }
